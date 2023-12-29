@@ -15,7 +15,7 @@ class CustomTextField extends StatefulWidget {
     this.errorMessage,
     required this.controller,
     this.hideText,
-  });
+});
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
