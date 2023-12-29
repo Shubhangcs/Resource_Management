@@ -20,15 +20,7 @@ class _HomePageState extends State<HomePage> {
                     fontSize: 25,
                     fontWeight: FontWeight.bold)),
             backgroundColor: Colors.orange),
-        drawer: Drawer(
-          child: ListView(
-            children: [
-              ListTile(
-                title: Text("Home"),
-              )
-            ],
-          ),
-        ),
+        drawer: customDrawer(context),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -64,26 +56,78 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            Container(margin:const EdgeInsets.only(left: 10 , top: 10),child: Text('Events' , style: GoogleFonts.varelaRound(fontSize: 30 , fontWeight: FontWeight.bold),)),
+            Container(
+              margin: const EdgeInsets.only(left: 10, top: 10),
+              child: Text(
+                'Events',
+                style: GoogleFonts.varelaRound(
+                    fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+            ),
             Expanded(
-                child: ListView.builder(
-              itemBuilder: (context, index) {
-                return  Column(
-                  children: [
-                    Divider(color: Colors.grey.shade300,),
-                   const ListTile(
-                      title: Text('Event name'),
-                      subtitle: Text('Hello World'),
-                      leading: Icon(Icons.notifications_on_rounded),
-                      trailing: Icon(Icons.arrow_forward_ios_rounded),
-                    ),
-                  ],
-                );
-              },
-              itemCount: 10,
-            ))
+              child: ListView.builder(
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: [
+                      Divider(
+                        color: Colors.grey.shade300,
+                      ),
+                      const ListTile(
+                        title: Text('Event name'),
+                        subtitle: Text('Hello World'),
+                        leading: Icon(Icons.notifications_on_rounded),
+                        trailing: Icon(Icons.arrow_forward_ios_rounded),
+                      ),
+                    ],
+                  );
+                },
+                itemCount: 10,
+              ),
+            )
           ],
         ),
+      ),
+    );
+  }
+
+  Widget customDrawer(BuildContext context) {
+    return Drawer(
+      child: Column(
+        children: [
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.orange.shade400,
+            ),
+            child: Center(child: Image.asset('assets/logo.png')),
+          ),
+          ListTile(
+            leading:const Icon(Icons.school),
+            title:const Text('Acadamics'),
+            trailing:const Icon(Icons.play_arrow_rounded),
+            onTap: () {
+              Navigator.pushNamed(context, "/acadamics");
+            },
+          ),
+          const Divider(),
+          const ListTile(
+            leading: Icon(Icons.pedal_bike_outlined),
+            title: Text('Clubs'),
+            trailing: Icon(Icons.play_arrow_rounded),
+          ),
+          const Divider(),
+          const ListTile(
+            leading: Icon(Icons.menu_book_rounded),
+            title: Text('Library'),
+            trailing: Icon(Icons.play_arrow_rounded),
+          ),
+          const Divider(),
+          const ListTile(
+            leading: Icon(Icons.business_outlined),
+            title: Text('Hostel'),
+            trailing: Icon(Icons.play_arrow_rounded),
+          ),
+          const Divider(),
+        ],
       ),
     );
   }

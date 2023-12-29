@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: Routes.onGenerate,
       initialRoute: '/home',
       theme: ThemeData(
-        appBarTheme:const AppBarTheme(
+        appBarTheme: const AppBarTheme(
           iconTheme: IconThemeData(
             color: Colors.white,
             size: 28,

@@ -1,3 +1,4 @@
+import 'package:alvas_management/views/pages/acadamics_page.dart';
 import 'package:alvas_management/views/pages/home_page.dart';
 import 'package:alvas_management/views/pages/login_page.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,8 @@ class Routes {
         return MaterialPageRoute(builder: (context) => const RegisterPage());
       case '/home':
         return MaterialPageRoute(builder: (context) => const HomePage());
+      case '/acadamics':
+        return MaterialPageRoute(builder: (context) => const AcadamicsPage());
       default:
         return MaterialPageRoute(
           builder: (context) => const LoginPage(),
