@@ -101,24 +101,25 @@ class _HomePageState extends State<HomePage> {
             child: Center(child: Image.asset('assets/logo.png')),
           ),
           ListTile(
-            leading:const Icon(Icons.school),
-            title:const Text('Acadamics'),
+            leading: const Icon(Icons.school),
+            title: const Text('Acadamics'),
+            trailing: const Icon(Icons.play_arrow_rounded),
+            onTap: () => Navigator.pushNamed(context, "/acadamics"),
+
+          ),
+          const Divider(),
+          ListTile(
+            leading: const Icon(Icons.pedal_bike_outlined),
+            title: const Text('Clubs'),
+            trailing: const Icon(Icons.play_arrow_rounded),
+            onTap: () => Navigator.pushNamed(context, '/clubs'),
+          ),
+          const Divider(),
+           ListTile(
+            leading:const Icon(Icons.menu_book_rounded),
+            title:const Text('Library'),
             trailing:const Icon(Icons.play_arrow_rounded),
-            onTap: () {
-              Navigator.pushNamed(context, "/acadamics");
-            },
-          ),
-          const Divider(),
-          const ListTile(
-            leading: Icon(Icons.pedal_bike_outlined),
-            title: Text('Clubs'),
-            trailing: Icon(Icons.play_arrow_rounded),
-          ),
-          const Divider(),
-          const ListTile(
-            leading: Icon(Icons.menu_book_rounded),
-            title: Text('Library'),
-            trailing: Icon(Icons.play_arrow_rounded),
+            onTap: () => Navigator.pushNamed(context , '/library'),
           ),
           const Divider(),
           const ListTile(

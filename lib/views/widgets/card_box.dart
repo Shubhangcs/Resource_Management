@@ -4,7 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 class CardBox extends StatelessWidget {
   final String title;
   final IconData icon;
-  const CardBox({super.key ,required this.title , required this.icon});
+  final VoidCallback? onPressed;
+  const CardBox({super.key, required this.title, required this.icon, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class CardBox extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-             Icon(
+            Icon(
               icon,
               weight: 10,
               size: 80,
